@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>小丑俱樂部 Joker Esports | 護航、陪玩、代肝、幣號</title>
+    <meta name="description" content="小丑俱樂部 Joker Esports 官方網站，提供護航、陪玩、代肝、幣號資訊，展示俱樂部特色、陪玩與打手名片、價目表、招募與 FAQ。">
+    <meta property="og:title" content="小丑俱樂部 Joker Esports">
+    <meta property="og:description" content="護航、陪玩、代肝、幣號。所有點單、詢問與招募申請皆導向 Discord。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/branding/logo.png">
+    <meta name="theme-color" content="#090909">
+    <link rel="icon" href="assets/branding/logo.png" type="image/png">
+    <link rel="preload" as="image" href="assets/backgrounds/hero-desktop.webp" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/backgrounds/hero-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script type="module" src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要內容</a>
+    <header class="site-header" data-header>
+      <nav class="nav-shell" aria-label="主要導覽">
+        <a class="brand-link" href="#home" aria-label="回到首頁">
+          <img src="assets/branding/logo.png" width="40" height="40" alt="小丑俱樂部 Logo">
+          <span>Joker Esports</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-menu">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="sr-only">開啟導覽選單</span>
+        </button>
+        <div class="nav-menu" id="primary-menu" data-nav-menu>
+          <a href="#home">首頁</a>
+          <a href="#about">關於</a>
+          <a href="#players">陪玩</a>
+          <a href="#pricing">價目表</a>
+          <a href="#recruitment">招募</a>
+          <a href="#faq">FAQ</a>
+          <a class="button button-small" href="https://discord.gg/R8E86xPpes" target="_blank" rel="noopener">加入 Discord</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="section-dots" aria-label="章節位置" data-section-dots></div>
+
+    <main id="main" class="snap-container">
+      <section class="site-section hero-section" id="home" data-section="首頁" aria-labelledby="hero-title">
+        <picture class="hero-media" aria-hidden="true">
+          <source srcset="assets/backgrounds/hero-mobile.webp" media="(max-width: 768px)" type="image/webp">
+          <img src="assets/backgrounds/hero-desktop.webp" width="1920" height="1080" alt="" fetchpriority="high">
+        </picture>
+        <div class="section-inner hero-inner">
+          <p class="eyebrow reveal">Joker Esports</p>
+          <div class="hero-brand-lockup reveal">
+            <img class="hero-logo" src="assets/branding/logo.png" width="150" height="150" alt="小丑俱樂部 Logo">
+            <h1 id="hero-title" class="hero-title">小丑電競</h1>
+          </div>
+          <p class="hero-subtitle reveal">護航 · 陪玩 · 代肝 · 幣號</p>
+          <a class="button button-primary reveal" href="https://discord.gg/R8E86xPpes" target="_blank" rel="noopener">加入 Discord</a>
+        </div>
+      </section>
+
+      <section class="site-section about-section" id="about" data-section="關於" aria-labelledby="about-title">
+        <div class="section-inner about-inner">
+          <div class="content-stack about-copy reveal">
+            <p class="eyebrow">About Club</p>
+            <h2 id="about-title">關於小丑俱樂部</h2>
+            <p class="section-copy">小丑俱樂部專注於 Discord 社群導向的陪玩、護航與代肝服務。這裡保留彈性內容區，正式介紹可在品牌文案完成後直接替換。</p>
+          </div>
+          <ul class="feature-grid feature-grid-standalone reveal" aria-label="俱樂部特色">
+            <li>
+              <span class="line-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 3.5 18.5 6v5.2c0 4.1-2.5 7.5-6.5 9.3-4-1.8-6.5-5.2-6.5-9.3V6L12 3.5Z"></path>
+                  <path d="m9.3 12 1.9 1.9 3.8-4"></path>
+                </svg>
+              </span>
+              <strong>安全交易</strong>
+            </li>
+            <li>
+              <span class="line-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 7h9"></path>
+                  <path d="M17 7h3"></path>
+                  <path d="M4 17h3"></path>
+                  <path d="M11 17h9"></path>
+                  <path d="M13 5v4"></path>
+                  <path d="M9 15v4"></path>
+                </svg>
+              </span>
+              <strong>高度自訂</strong>
+            </li>
+            <li>
+              <span class="line-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12a7 7 0 0 1 12-4.9"></path>
+                  <path d="M17 4.8v4h-4"></path>
+                  <path d="M19 12a7 7 0 0 1-12 4.9"></path>
+                  <path d="M7 19.2v-4h4"></path>
+                </svg>
+              </span>
+              <strong>售後服務</strong>
+            </li>
+            <li>
+              <span class="line-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 6.5h14v9H9l-4 3v-12Z"></path>
+                  <path d="M8.5 10h7"></path>
+                  <path d="M8.5 13h4.5"></path>
+                </svg>
+              </span>
+              <strong>快速回覆</strong>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="site-section" id="players" data-section="陪玩" aria-labelledby="players-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Players</p>
+            <h2 id="players-title">陪玩與打手名片</h2>
+          </div>
+          <div class="async-region reveal" id="players-region" data-dynamic-region>
+            <div class="skeleton-grid" aria-label="名片載入中">
+              <span class="skeleton-card"></span>
+              <span class="skeleton-card"></span>
+              <span class="skeleton-card"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section" id="pricing" data-section="價目" aria-labelledby="pricing-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Pricing</p>
+            <h2 id="pricing-title">點單價目表</h2>
+          </div>
+          <div class="async-region reveal" id="pricing-region" data-dynamic-region>
+            <div class="skeleton-grid skeleton-grid-wide" aria-label="價目載入中">
+              <span class="skeleton-row"></span>
+              <span class="skeleton-row"></span>
+              <span class="skeleton-row"></span>
+            </div>
+          </div>
+          <div class="center-action reveal">
+            <a class="button button-primary" href="https://discord.gg/R8E86xPpes" target="_blank" rel="noopener">前往 Discord 點單</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section recruitment-section" id="recruitment" data-section="招募" aria-labelledby="recruitment-title">
+        <div class="section-inner recruitment-inner">
+          <div class="async-region reveal" id="recruitment-region" data-dynamic-region>
+            <div class="skeleton-stack" aria-label="招募資訊載入中">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section" id="faq" data-section="FAQ" aria-labelledby="faq-title">
+        <div class="section-inner">
+          <div class="async-region reveal faq-wrap" id="faq-region" data-dynamic-region>
+            <div class="skeleton-stack" aria-label="FAQ 載入中">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-section" id="contact">
+        <div class="section-inner footer-inner">
+          <div class="footer-brand">
+            <img src="assets/branding/logo.png" width="48" height="48" alt="小丑俱樂部 Logo" loading="lazy">
+            <div>
+              <strong>Joker Esports</strong>
+              <span>小丑俱樂部</span>
+            </div>
+          </div>
+          <nav class="footer-links" aria-label="頁尾連結">
+            <a href="#players">陪玩名片</a>
+            <a href="#pricing">點單價目</a>
+            <a href="#recruitment">招募資訊</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://discord.gg/R8E86xPpes" target="_blank" rel="noopener">Discord</a>
+          </nav>
+          <small>© <span data-year></span> 小丑俱樂部 Joker Esports. All rights reserved.</small>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

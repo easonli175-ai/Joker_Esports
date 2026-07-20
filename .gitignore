@@ -1,0 +1,29 @@
+# Private admin UI
+admin/
+js/admin/
+css/admin.css
+
+# Private API server and data
+api_server/
+
+# Local project notes that include private deployment details
+README.md
+
+# Codex/local workspace metadata
+.agents/
+.codex/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Logs and temp files
+*.log
+tmp/
+temp/
