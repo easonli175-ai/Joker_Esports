@@ -1,5 +1,5 @@
 const API_PORT = "18080";
-const PUBLIC_API_BASE_URL = `http://eason.giize.com:${API_PORT}`;
+const PUBLIC_API_BASE_URL = "https://api.eason729.com";
 
 function isLocalHost(hostname) {
   return (
