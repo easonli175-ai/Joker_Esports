@@ -28,6 +28,10 @@
     display: inline-block;
   }
 
+  .theme-toggle {
+    display: grid;
+  }
+
   .nav-menu {
     position: fixed;
     top: var(--header-height);
@@ -38,7 +42,7 @@
     padding: 12px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    background: rgba(9, 9, 9, 0.96);
+    background: var(--color-menu-background);
     visibility: hidden;
     opacity: 0;
     transform: translateY(-10px);
@@ -84,8 +88,8 @@
 
   .hero-section::after {
     background:
-      linear-gradient(180deg, rgba(9, 9, 9, 0.28), rgba(9, 9, 9, 0.86)),
-      linear-gradient(90deg, rgba(9, 9, 9, 0.78), rgba(9, 9, 9, 0.45));
+      var(--hero-mobile-overlay-vertical),
+      var(--hero-mobile-overlay-horizontal);
   }
 
   .player-toolbar {

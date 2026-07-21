@@ -5,7 +5,7 @@
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: var(--color-scheme);
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
 }
@@ -28,8 +28,8 @@ body::before {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-line-strong) 1px, transparent 1px),
     var(--color-background);
   background-size: 96px 96px;
 }
@@ -40,10 +40,10 @@ body::after {
   z-index: -1;
   pointer-events: none;
   content: "";
-  opacity: 0.32;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 0.8px, transparent 0.8px);
+  opacity: var(--grain-opacity);
+  background-image: radial-gradient(var(--color-grain-dot) 0.8px, transparent 0.8px);
   background-size: 4px 4px;
-  mix-blend-mode: screen;
+  mix-blend-mode: var(--grain-blend-mode);
 }
 
 img,

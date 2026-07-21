@@ -1,5 +1,6 @@
 import { initRevealAnimations } from "./animations.js";
 import { initNavigation } from "./navigation.js";
+import { initTheme } from "./theme.js";
 import { renderPlayers } from "./sections/players.js";
 import { renderPricing } from "./sections/pricing.js";
 import { renderRecruitment } from "./sections/recruitment.js";
@@ -57,6 +58,7 @@ function initDynamicSections() {
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("[data-year]").textContent = new Date().getFullYear();
+  initTheme();
   initNavigation();
   initRevealAnimations();
   initDynamicSections();
