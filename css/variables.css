@@ -42,6 +42,10 @@
   --color-boss-panel-background: linear-gradient(180deg, rgba(56, 189, 248, 0.1), rgba(17, 17, 17, 0.98));
   --color-skeleton-start: rgba(255, 255, 255, 0.07);
   --color-skeleton-mid: rgba(255, 255, 255, 0.13);
+  --cursor-pixel-color: rgba(255, 255, 255, 0.58);
+  --cursor-pixel-border: rgba(168, 85, 247, 0.72);
+  --cursor-crosshair-color: rgba(255, 255, 255, 0.88);
+  --cursor-crosshair-accent: rgba(168, 85, 247, 0.9);
   --shadow-panel: 0 20px 60px rgba(0, 0, 0, 0.36);
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   --header-height: 76px;
@@ -95,6 +99,10 @@
   --color-boss-panel-background: linear-gradient(180deg, rgba(56, 189, 248, 0.14), rgba(255, 255, 255, 0.95));
   --color-skeleton-start: rgba(37, 27, 55, 0.06);
   --color-skeleton-mid: rgba(124, 58, 237, 0.14);
+  --cursor-pixel-color: rgba(23, 19, 31, 0.52);
+  --cursor-pixel-border: rgba(124, 58, 237, 0.46);
+  --cursor-crosshair-color: rgba(23, 19, 31, 0.84);
+  --cursor-crosshair-accent: rgba(124, 58, 237, 0.72);
   --shadow-panel: 0 20px 54px rgba(40, 24, 65, 0.16);
 }
 
@@ -143,6 +151,10 @@
     --color-boss-panel-background: linear-gradient(180deg, rgba(56, 189, 248, 0.14), rgba(255, 255, 255, 0.95));
     --color-skeleton-start: rgba(37, 27, 55, 0.06);
     --color-skeleton-mid: rgba(124, 58, 237, 0.14);
+    --cursor-pixel-color: rgba(23, 19, 31, 0.52);
+    --cursor-pixel-border: rgba(124, 58, 237, 0.46);
+    --cursor-crosshair-color: rgba(23, 19, 31, 0.84);
+    --cursor-crosshair-accent: rgba(124, 58, 237, 0.72);
     --shadow-panel: 0 20px 54px rgba(40, 24, 65, 0.16);
   }
 }

@@ -30,6 +30,34 @@
   }
 }
 
+@keyframes cursorPixelFade {
+  from {
+    opacity: 0.82;
+    transform: translate(-50%, -50%) scale(1) rotate(var(--pixel-rotate, 0deg));
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.22) rotate(var(--pixel-rotate, 0deg));
+  }
+}
+
+@keyframes cursorCrosshair {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+}
+
 @keyframes heroZoom {
   from {
     transform: scale(1.07);

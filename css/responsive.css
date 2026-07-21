@@ -182,6 +182,26 @@
     grid-template-columns: 1fr;
   }
 
+  .pricing-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(86vw, 340px);
+    grid-template-columns: none;
+    justify-content: start;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    padding: 4px var(--section-inline) 16px;
+    margin-inline: calc(var(--section-inline) * -1);
+  }
+
+  .pricing-card {
+    width: min(86vw, 340px);
+    scroll-snap-align: center;
+  }
+
   .player-grid {
     grid-auto-columns: min(86vw, 312px);
     grid-template-rows: repeat(2, minmax(0, 1fr));
