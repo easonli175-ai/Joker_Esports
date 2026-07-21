@@ -81,7 +81,7 @@
 }
 
 .theme-toggle {
-  display: none;
+  display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
@@ -90,6 +90,10 @@
   background: var(--color-control-background);
   color: var(--color-text);
   transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.nav-actions .theme-toggle {
+  display: none;
 }
 
 .theme-toggle:hover {
@@ -281,48 +285,51 @@
 
 .hero-section .eyebrow {
   color: var(--color-brand-purple);
-  -webkit-text-stroke: 0.32px var(--color-brand-outline);
-  text-shadow: 0 0 1px var(--color-brand-outline), 0 10px 30px var(--color-brand-purple-soft);
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 0 rgba(124, 58, 237, 0.42), 0 10px 30px var(--color-brand-purple-soft);
 }
 
 .hero-title {
   margin: 0;
-  color: transparent;
-  background: linear-gradient(180deg, var(--color-hero-title-top) 8%, var(--color-hero-title-mid) 44%, var(--color-hero-title-bottom) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 1px var(--color-hero-title-stroke);
-  text-shadow: 0 12px 44px rgba(168, 85, 247, 0.38);
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 5px 0 rgba(124, 58, 237, 0.58), 0 14px 44px rgba(168, 85, 247, 0.42);
   font-size: clamp(4rem, 11vw, 9rem);
 }
 
 :root[data-theme="light"] .hero-section .eyebrow {
   color: #ffffff;
-  -webkit-text-stroke: 0.45px rgba(124, 58, 237, 0.82);
-  text-shadow: 0 2px 0 rgba(124, 58, 237, 0.32), 0 12px 30px rgba(76, 29, 149, 0.24);
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 0 rgba(124, 58, 237, 0.52), 0 12px 30px rgba(76, 29, 149, 0.24);
 }
 
 :root[data-theme="light"] .hero-title {
   color: #ffffff;
   background: none;
   -webkit-text-fill-color: #ffffff;
-  -webkit-text-stroke: 1px rgba(124, 58, 237, 0.58);
-  text-shadow: 0 3px 0 rgba(124, 58, 237, 0.28), 0 18px 48px rgba(76, 29, 149, 0.32);
+  -webkit-text-stroke: 0;
+  text-shadow:
+    0 4px 0 rgba(124, 58, 237, 0.54),
+    0 12px 34px rgba(76, 29, 149, 0.34);
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) .hero-section .eyebrow {
     color: #ffffff;
-    -webkit-text-stroke: 0.45px rgba(124, 58, 237, 0.82);
-    text-shadow: 0 2px 0 rgba(124, 58, 237, 0.32), 0 12px 30px rgba(76, 29, 149, 0.24);
+    -webkit-text-stroke: 0;
+    text-shadow: 0 2px 0 rgba(124, 58, 237, 0.52), 0 12px 30px rgba(76, 29, 149, 0.24);
   }
 
   :root:not([data-theme]) .hero-title {
     color: #ffffff;
     background: none;
     -webkit-text-fill-color: #ffffff;
-    -webkit-text-stroke: 1px rgba(124, 58, 237, 0.58);
-    text-shadow: 0 3px 0 rgba(124, 58, 237, 0.28), 0 18px 48px rgba(76, 29, 149, 0.32);
+    -webkit-text-stroke: 0;
+    text-shadow:
+      0 4px 0 rgba(124, 58, 237, 0.54),
+      0 12px 34px rgba(76, 29, 149, 0.34);
   }
 }
 

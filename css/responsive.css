@@ -7,6 +7,15 @@
     margin-inline: calc(var(--section-inline) * -1);
     padding-inline: var(--section-inline);
   }
+
+  .pricing-filter-shell {
+    width: 100%;
+  }
+
+  .pricing-control-frame .pricing-tabs {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
 }
 
 @media (max-width: 900px) {
@@ -28,7 +37,11 @@
     display: inline-block;
   }
 
-  .theme-toggle {
+  .theme-toggle-desktop {
+    display: none;
+  }
+
+  .nav-actions .theme-toggle {
     display: grid;
   }
 
@@ -200,6 +213,11 @@
   .pricing-tab {
     min-height: 44px;
     padding-inline: 14px;
+  }
+
+  .pricing-platform-tab {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .footer-inner h2 {

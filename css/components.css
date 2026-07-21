@@ -354,45 +354,116 @@
   gap: 14px;
 }
 
+.pricing-filter-shell {
+  display: grid;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 22px;
+}
+
+.pricing-control-frame {
+  position: relative;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-panel-background-soft);
+  box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.05);
+  overflow: visible;
+}
+
+.pricing-platform-arrow {
+  position: absolute;
+  top: -9px;
+  left: var(--pricing-arrow-x, 50%);
+  width: 16px;
+  height: 16px;
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+  background: var(--color-panel-background-soft);
+  transform: translateX(-50%) rotate(45deg);
+  transition: left 220ms ease;
+}
+
+.pricing-platform-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
 .pricing-tabs {
+  position: relative;
   display: flex;
   gap: 8px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
   overflow-x: auto;
-  padding-bottom: 6px;
   scrollbar-width: thin;
 }
 
+.pricing-category-indicator {
+  position: absolute;
+  top: 12px;
+  left: var(--pricing-category-x, 12px);
+  z-index: 0;
+  width: var(--pricing-category-width, 92px);
+  height: 42px;
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--color-accent-soft);
+  transition: left 220ms ease, width 220ms ease;
+}
+
+.pricing-platform-tab,
 .pricing-tab {
   position: relative;
   flex: 0 0 auto;
-  min-height: 42px;
-  padding: 0 16px;
   border: 0;
-  border-bottom: 2px solid var(--color-border);
   background: linear-gradient(180deg, var(--color-control-background-hover), var(--color-control-background));
   color: var(--color-muted-strong);
   font-weight: 900;
   letter-spacing: 0;
-  transition: color var(--transition), border-color var(--transition), background var(--transition);
+  transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.pricing-platform-tab {
+  min-height: 38px;
+  min-width: 92px;
+  padding: 0 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+.pricing-tab {
+  z-index: 1;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: calc(var(--radius) - 2px);
 }
 
 .pricing-tab::before {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  content: "";
-  border: 1px solid var(--color-border);
-  border-bottom: 0;
+  content: none;
 }
 
+.pricing-platform-tab:hover,
+.pricing-platform-tab.is-active,
 .pricing-tab:hover,
 .pricing-tab.is-active {
-  border-bottom-color: var(--color-accent);
-  background: linear-gradient(180deg, var(--color-accent-soft), var(--color-control-background));
   color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+.pricing-platform-tab.is-active {
+  border-color: var(--color-border-strong);
+  color: var(--color-accent-strong);
+}
+
+.pricing-tab.is-active {
+  background: transparent;
+  color: var(--color-accent-strong);
+}
+
+.pricing-grid.is-switching .pricing-card:not([hidden]) {
+  animation: pricingSwitch 220ms ease both;
 }
 
 .pricing-card {
@@ -405,34 +476,58 @@
   background: var(--color-panel-background);
 }
 
+.pricing-card-head {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 16px;
+  padding-inline: 0;
+}
+
 .pricing-card h3 {
-  margin: 0 0 8px;
-  font-size: 1.15rem;
+  position: absolute;
+  left: 50%;
+  width: min(72%, 18rem);
+  margin: 0;
+  transform: translateX(-50%);
+  color: var(--pricing-title-color, var(--color-text));
+  font-size: clamp(1.32rem, 2.2vw, 1.72rem);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .pricing-category {
-  margin-bottom: 12px;
+  margin: 0;
   color: var(--color-accent);
   font-size: 0.82rem;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .pricing-card p {
   flex: 1;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  font-size: 1.04rem;
+  white-space: pre-line;
 }
 
 .price-text {
   display: block;
-  margin-top: auto;
+  margin-top: 8px;
+  color: var(--pricing-price-color, #facc15);
   font-size: 1.28rem;
   font-weight: 900;
+  text-align: right;
 }
 
 .pricing-note {
-  margin-top: 6px;
+  display: block;
+  margin-top: 8px;
   color: var(--color-muted);
-  font-size: 0.86rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  text-align: center;
+  white-space: pre-line;
 }
 
 .recruitment-inner {

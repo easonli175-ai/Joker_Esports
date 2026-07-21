@@ -84,6 +84,11 @@ export function escapeHtml(value = "") {
   })[char]);
 }
 
+export function sanitizeHexColor(value = "") {
+  const color = String(value || "").trim();
+  return /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/.test(color) ? color : "";
+}
+
 export function visibleSorted(items = []) {
   return [...items]
     .filter((item) => item.is_visible !== false)
