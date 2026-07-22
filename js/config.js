@@ -1,5 +1,6 @@
 const API_PORT = "18080";
-const PUBLIC_API_BASE_URL = "https://api.eason729.com";
+const PRODUCTION_PUBLIC_API_BASE_URL = "https://api.eason729.com";
+const PRODUCTION_ADMIN_API_BASE_URL = "https://admin-api.eason729.com";
 
 function isLocalHost(hostname) {
   return (
@@ -12,18 +13,28 @@ function isLocalHost(hostname) {
   );
 }
 
-function resolveApiBaseUrl() {
-  if (typeof window === "undefined") return PUBLIC_API_BASE_URL;
+function resolveLocalApiBaseUrl() {
+  if (typeof window === "undefined") return "";
 
   const { hostname, protocol } = window.location;
   if (protocol === "http:" && isLocalHost(hostname)) {
     return `http://${hostname}:${API_PORT}`;
   }
 
-  return PUBLIC_API_BASE_URL;
+  return "";
 }
 
-export const API_BASE_URL = resolveApiBaseUrl();
+function resolvePublicApiBaseUrl() {
+  return resolveLocalApiBaseUrl() || PRODUCTION_PUBLIC_API_BASE_URL;
+}
+
+function resolveAdminApiBaseUrl() {
+  return resolveLocalApiBaseUrl() || PRODUCTION_ADMIN_API_BASE_URL;
+}
+
+export const PUBLIC_API_BASE_URL = resolvePublicApiBaseUrl();
+export const ADMIN_API_BASE_URL = resolveAdminApiBaseUrl();
+export const API_BASE_URL = PUBLIC_API_BASE_URL;
 
 export const DISCORD_INVITE_URL = "https://discord.gg/R8E86xPpes";
 
@@ -31,4 +42,5 @@ export const REQUEST_TIMEOUT_MS = 7000;
 export const REQUEST_RETRIES = 1;
 export const CACHE_TTL_MS = 1000 * 60 * 20;
 
-export const IS_MOCK_API_BASE = API_BASE_URL.includes("api.example.com") || API_BASE_URL.trim() === "";
+export const IS_MOCK_API_BASE =
+  PUBLIC_API_BASE_URL.includes("api.example.com") || PUBLIC_API_BASE_URL.trim() === "";

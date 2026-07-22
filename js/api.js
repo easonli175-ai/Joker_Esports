@@ -1,7 +1,8 @@
 import {
-  API_BASE_URL,
+  ADMIN_API_BASE_URL,
   CACHE_TTL_MS,
   IS_MOCK_API_BASE,
+  PUBLIC_API_BASE_URL,
   REQUEST_RETRIES,
   REQUEST_TIMEOUT_MS
 } from "./config.js";
@@ -42,8 +43,8 @@ function writeCache(path, data) {
   }
 }
 
-function resolveUrl(path) {
-  return `${API_BASE_URL.replace(/\/$/, "")}${path}`;
+function resolveUrl(baseUrl, path) {
+  return `${baseUrl.replace(/\/$/, "")}${path}`;
 }
 
 function mockResponse(key) {
@@ -64,11 +65,11 @@ async function fetchWithTimeout(url, options = {}) {
   }
 }
 
-async function requestJson(path, options = {}) {
+async function requestJson(baseUrl, path, options = {}) {
   let lastError;
   for (let attempt = 0; attempt <= REQUEST_RETRIES; attempt += 1) {
     try {
-      return await fetchWithTimeout(resolveUrl(path), options);
+      return await fetchWithTimeout(resolveUrl(baseUrl, path), options);
     } catch (error) {
       lastError = error;
       if (attempt < REQUEST_RETRIES) {
@@ -85,7 +86,7 @@ export async function getPublicResource(path, mockKey) {
   }
 
   try {
-    const data = await requestJson(path);
+    const data = await requestJson(PUBLIC_API_BASE_URL, path);
     writeCache(path, data);
     return { data, source: "api", stale: false };
   } catch (error) {
@@ -105,6 +106,23 @@ export const publicApi = {
   settings: () => getPublicResource("/api/settings", "settings")
 };
 
+export async function getAdminResource(path, mockKey) {
+  if (IS_MOCK_API_BASE) {
+    return mockResponse(mockKey);
+  }
+
+  const data = await requestJson(ADMIN_API_BASE_URL, path);
+  return { data, source: "api", stale: false };
+}
+
+export const adminApi = {
+  players: () => getAdminResource("/api/admin/players", "players"),
+  pricing: () => getAdminResource("/api/admin/pricing", "pricing"),
+  recruitment: () => getAdminResource("/api/admin/recruitment", "recruitment"),
+  faq: () => getAdminResource("/api/admin/faq", "faq"),
+  settings: () => getAdminResource("/api/admin/settings", "settings")
+};
+
 export async function adminRequest(path, { method = "GET", body } = {}) {
   const headers = {};
   let payload = body;
@@ -119,7 +137,7 @@ export async function adminRequest(path, { method = "GET", body } = {}) {
     return { ok: true, mock: true };
   }
 
-  return requestJson(path, {
+  return requestJson(ADMIN_API_BASE_URL, path, {
     method,
     headers,
     body: payload
