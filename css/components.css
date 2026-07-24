@@ -219,9 +219,9 @@
 }
 
 .player-card.is-boss {
-  border-color: rgba(56, 189, 248, 0.82);
+  border-color: var(--color-boss-blue);
   background: var(--color-boss-panel-background);
-  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.18);
+  box-shadow: 0 0 0 1px var(--color-boss-blue-soft);
 }
 
 .player-compact {
@@ -283,8 +283,8 @@
 }
 
 .player-preview.is-boss {
-  border-color: rgba(56, 189, 248, 0.88);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(56, 189, 248, 0.18);
+  border-color: var(--color-boss-blue);
+  box-shadow: var(--shadow-boss);
 }
 
 .player-preview-empty {
@@ -343,9 +343,9 @@
 }
 
 .tag-boss {
-  border-color: rgba(245, 208, 111, 0.72);
-  background: rgba(245, 208, 111, 0.12);
-  color: #f5d06f;
+  border-color: var(--color-boss-gold);
+  background: var(--color-boss-gold-soft);
+  color: var(--color-boss-gold-text);
 }
 
 .pricing-grid {

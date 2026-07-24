@@ -248,7 +248,7 @@
 .hero-media img {
   object-fit: cover;
   transform: scale(1.03);
-  animation: heroZoom 14s ease-out both;
+  animation: heroZoom 9s var(--ease-out-expo, ease-out) both;
 }
 
 .hero-section::after {
@@ -297,6 +297,33 @@
   -webkit-text-stroke: 0;
   text-shadow: 0 5px 0 rgba(124, 58, 237, 0.58), 0 14px 44px rgba(168, 85, 247, 0.42);
   font-size: clamp(4rem, 11vw, 9rem);
+}
+
+.hero-title-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.05;
+}
+
+.hero-title-mask > .hero-title {
+  display: inline-block;
+  margin: 0;
+  transform: translateY(110%);
+  transition: transform 700ms var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1));
+  transition-delay: 220ms;
+  will-change: transform;
+}
+
+.hero-section.is-ready .hero-title-mask > .hero-title {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-mask > .hero-title {
+    transform: translateY(0);
+    transition: none;
+  }
 }
 
 :root[data-theme="light"] .hero-section .eyebrow {

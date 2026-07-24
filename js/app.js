@@ -1,4 +1,4 @@
-import { initRevealAnimations } from "./animations.js";
+import { initRevealAnimations, initHeroReveal } from "./animations.js";
 import { initNavigation } from "./navigation.js";
 import { initTheme } from "./theme.js";
 import { initCursorEffects } from "./cursor-effects.js";
@@ -63,5 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavigation();
   initCursorEffects();
   initRevealAnimations();
+  initHeroReveal();
   initDynamicSections();
 });

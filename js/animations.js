@@ -2,6 +2,7 @@ export function initRevealAnimations() {
   const items = [...document.querySelectorAll(".reveal")];
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     items.forEach((item) => item.classList.add("is-visible"));
+    document.querySelector(".hero-section")?.classList.add("is-ready");
     return;
   }
 
@@ -15,4 +16,16 @@ export function initRevealAnimations() {
   }, { root: null, threshold: 0.18 });
 
   items.forEach((item) => observer.observe(item));
+}
+
+export function initHeroReveal() {
+  const hero = document.querySelector(".hero-section");
+  if (!hero) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    hero.classList.add("is-ready");
+    return;
+  }
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => hero.classList.add("is-ready"))
+  );
 }

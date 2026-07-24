@@ -36,11 +36,29 @@ export function initNavigation() {
     if (!target) return;
     const top = Math.max(0, target.offsetTop);
     document.documentElement.classList.add("is-jumping");
-    target.scrollIntoView({ behavior, block: "start" });
     window.scrollTo({ top, behavior });
-    document.documentElement.scrollTop = top;
-    document.body.scrollTop = top;
-    window.setTimeout(() => document.documentElement.classList.remove("is-jumping"), 1400);
+
+    let stabilizationTimer = null;
+    let disconnected = false;
+    const cleanup = () => {
+      if (disconnected) return;
+      disconnected = true;
+      ro.disconnect();
+      clearTimeout(stabilizationTimer);
+      document.documentElement.classList.remove("is-jumping");
+    };
+
+    const ro = new ResizeObserver(() => {
+      if (behavior === "auto") {
+        const newTop = Math.max(0, target.offsetTop);
+        if (newTop !== top) window.scrollTo({ top: newTop, behavior: "auto" });
+      }
+      clearTimeout(stabilizationTimer);
+      stabilizationTimer = setTimeout(cleanup, 220);
+    });
+    ro.observe(target);
+    window.setTimeout(cleanup, 800);
+
     target.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
     setActive(target.id);
     history.replaceState(null, "", hash);
@@ -75,10 +93,7 @@ export function initNavigation() {
   setActive("home");
 
   if (window.location.hash) {
-    window.setTimeout(() => jumpToHash(window.location.hash, "auto"), 0);
-    window.setTimeout(() => jumpToHash(window.location.hash, "auto"), 350);
-    window.setTimeout(() => jumpToHash(window.location.hash, "auto"), 900);
-    window.setTimeout(() => jumpToHash(window.location.hash, "auto"), 1400);
+    requestAnimationFrame(() => jumpToHash(window.location.hash, "auto"));
   }
 
   window.addEventListener("scroll", updateHeader, { passive: true });
