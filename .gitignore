@@ -12,6 +12,7 @@ README.md
 # Codex/local workspace metadata
 .agents/
 .codex/
+.opencode/
 
 # OS/editor noise
 .DS_Store

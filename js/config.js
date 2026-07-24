@@ -1,6 +1,6 @@
 const API_PORT = "18080";
 const PRODUCTION_PUBLIC_API_BASE_URL = "https://api.eason729.com";
-const PRODUCTION_ADMIN_API_BASE_URL = "https://admin-api.eason729.com";
+const LOCAL_ADMIN_API_BASE_URL = `http://127.0.0.1:${API_PORT}`;
 
 function isLocalHost(hostname) {
   return (
@@ -29,7 +29,7 @@ function resolvePublicApiBaseUrl() {
 }
 
 function resolveAdminApiBaseUrl() {
-  return resolveLocalApiBaseUrl() || PRODUCTION_ADMIN_API_BASE_URL;
+  return resolveLocalApiBaseUrl() || LOCAL_ADMIN_API_BASE_URL;
 }
 
 export const PUBLIC_API_BASE_URL = resolvePublicApiBaseUrl();
